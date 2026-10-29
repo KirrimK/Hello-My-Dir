@@ -514,7 +514,7 @@ Function Resolve-AMinPwdLen {
 
     # Update the policy: Windows Server 2022 or newer
 
-    $Win2k22OrNewer = [int]((gwmi Win32_OperatingSystem).Caption) -ge 2022
+    $Win2k22OrNewer = [int]((gwmi Win32_OperatingSystem).Caption -replace '.*(\d{4}).*', '$1') -ge 2022
 
     Try {
         if ($Win2k22OrNewer) {
@@ -626,8 +626,10 @@ Function Resolve-ALAPSNotInstalled {
 
     $LogData += @("OS Caption: $($OSCaption)","Domain Functional Level: $($DomainDFL)","OS Architecture: $($OSArchitr)",' ')
 
-    $Win2k19OrNewer = [int]((gwmi Win32_OperatingSystem).Caption) -ge 2019
-    $DFL2k16OrNewer = [int]($DomainDFL) -ge 2016
+    
+
+    $Win2k19OrNewer = [int]($OSCaption -replace '.*(\d{4}).*', '$1') -ge 2019
+    $DFL2k16OrNewer = [int]($DomainDFL -replace '.*(\d{4}).*', '$1') -ge 2016
 
     # Updating Schema, if possible
     if ($Win2k19OrNewer -and $DFL2k16OrNewer) {
