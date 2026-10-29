@@ -12,7 +12,7 @@
 RootModule = 'Module-PC_3-2-0-1.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '1.2.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -21,10 +21,10 @@ ModuleVersion = '1.0.0.0'
 GUID = 'c12bd1a9-c544-4c79-affe-6ed8689700f4'
 
 # Author of this module
-Author = 'Loic VEIRMAN'
+Author = 'Rémy B., Loic VEIRMAN'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+CompanyName = ''
 
 # Copyright statement for this module
 Copyright = '(c) Loic VEIRMAN. All rights reserved.'
@@ -107,7 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = 'Account for Windows 2025'
 
         # Prerelease string of this module
         # Prerelease = ''

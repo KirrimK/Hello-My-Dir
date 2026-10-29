@@ -10,8 +10,7 @@ Function New-HmDRunSetupXml {
         The file runSetup.xml is a prerequesite for the script to run. This function generates one with no value set.
 
         .NOTES
-        Version: 01.000.000 -- Loic VEIRMAN (MSSec)
-        History: 2024/05.14 -- Script creation.
+        Version 01.02.00 (2026/10/29 - Account for Windows 2025)
     #>
     Param()
 
@@ -22,7 +21,7 @@ Function New-HmDRunSetupXml {
     # Add content
     # - Start: Configuration
     $myXml.WriteStartElement('Configuration')
-    $myXml.WriteAttributeString('Edition','1.1.2 Quick Fix 002')
+    $myXml.WriteAttributeString('Edition','1.2.0')
     # - Start: Forest
     $myXml.WriteStartElement('Forest')
     $myXml.WriteElementString('Installation','')
@@ -91,8 +90,7 @@ Function Get-HmDForest {
         XML dataset with previous choices to offer a more dynamic experience.
 
         .NOTES
-        Version: 01.000.000 -- Loic VEIRMAN (MSSec)
-        History: 2024/05/10 -- Script creation.
+        Version 01.02.00 (2026/10/29 - Account for Windows 2025)
     #>
 
     [CmdletBinding()]
@@ -312,7 +310,7 @@ Function Get-HmDForest {
     Write-Host
 
     ### Display options on screen
-    for ($id = 7 ; $id -ge 1 ; $id--) {
+    for ($id = 10 ; $id -ge 1 ; $id--) {
         if ($id -match $IdRegexFL) {
             Write-Host " [" -ForegroundColor White -NoNewline
             Write-Host $id -ForegroundColor Cyan -NoNewline
@@ -326,7 +324,7 @@ Function Get-HmDForest {
     Write-Host
     Write-UserChoice $toDisplayArr
 
-    ### Check if FFL has a value. If not, we will use the maximum level value (which is always seven, yet.)
+    ### Check if FFL has a value. If not, we will use the maximum level value
     if ([String]::IsNullOrEmpty($ForestFFL)) {
         if ($OSCaption -match "2025") { 
             $ForestFFL = "10" 
@@ -973,7 +971,7 @@ Function Get-HmDDomain {
     Write-Host
 
     ### Display options on screen
-    for ($id = 7 ; $id -ge 1 ; $id--) {
+    for ($id = 10 ; $id -ge 1 ; $id--) {
         if ($id -match $IdRegexFL -and $id -ge $ForestFFL) {
             Write-Host " [" -ForegroundColor White -NoNewline
             Write-Host $id -ForegroundColor Cyan -NoNewline
@@ -1302,8 +1300,7 @@ Function Update-HmDRunSetupXml {
         The file runSetup.xml is a prerequesite for the script to run. This function updates one with no previous value set.
 
         .NOTES
-        Version: 01.000.000 -- Loic VEIRMAN (MSSec)
-        History: 2024/06/29 -- Script creation.
+        Version 01.02.00 (2026/10/29 - Account for Windows 2025)
     #>
     Param()
 
@@ -1317,7 +1314,7 @@ Function Update-HmDRunSetupXml {
         # Add content
         # - Start: Configuration
         $myXml.WriteStartElement('Configuration')
-        $myXml.WriteAttributeString('Edition','1.1.2 Quick fix 002')
+        $myXml.WriteAttributeString('Edition','1.2.0')
         # - Start: Forest
         $myXml.WriteStartElement('Forest')
         $myXml.WriteElementString('Installation',$pvXml.Configuration.Forest.Installation)

@@ -491,7 +491,7 @@ Function Resolve-AMinPwdLen {
         Verify if the password policy of the domain enforces users to have at least 8 characters in their password
 
         .NOTES
-        Version 01.00.00 (2024/06/10 - Creation)
+        Version 01.02.00 (2026/10/26 - Account for Windows 2025)
     #>
     Param()
 
@@ -512,11 +512,12 @@ Function Resolve-AMinPwdLen {
     }
     $LogData += "New Default Domain Policy password length value: $newLen"
 
-    # Update the policy: Windows Server 2022
+    # Update the policy: Windows Server 2022 or newer
+
+    $Win2k22OrNewer = [int]((gwmi Win32_OperatingSystem).Caption) -ge 2022
+
     Try {
-        $FlagIs2k22 = $False
-        if ((gwmi Win32_OperatingSystem).Caption -match "2022") {
-            $FlagIs2k22 = $true
+        if ($Win2k22OrNewer) {
             Set-ADDefaultDomainPasswordPolicy -ComplexityEnabled 1 -Confirm:$false -Identity (Get-ADDomain).DistinguishedName `
                                               -LockOutDuration 0.0:15:0.0 -LockoutObservationWindow 0.0:5:0.0 -LockoutThreshold 5 `
                                               -MaxPasswordAge 365.0:0:0.0 -MinPasswordAge 1.0:0:0.0 -MinPasswordLength $newLen `
@@ -535,7 +536,7 @@ Function Resolve-AMinPwdLen {
 
     # Update the policy: Windows Server 2019 or younger
     Try {
-        if (-not($FlagIs2k22)) {
+        if (-not($Win2k22OrNewer)) {
             [void](secedit /export /cfg .\secpol.cfg)
             [void]((Get-Content .\secpol.cfg).replace("MaximumPasswordAge = 42", "MaximumPasswordAge = 365") | Out-File .\secpol.cfg)
             [void]((Get-Content .\secpol.cfg).replace("MinimumPasswordLength = 7", "MinimumPasswordLength = $NewLen") | Out-File .\secpol.cfg)
@@ -545,7 +546,7 @@ Function Resolve-AMinPwdLen {
             $LogData += @("Using SECPOL:",' ',"Complexity: Enabled", "Lockout duration: N/A", "Lockout observation: N/A", "Lockout threshold: 0", "Max pwd age: 365 days", "Min pwd age: 1 day", "Password Min Length: $newLen", "Password History: 24", "Reversible encryption: False")
         }
         Else {
-            if (-not($FlagIs2k22)) {
+            if (-not($Win2k22OrNewer)) {
                 $LogData += "Failed to identify how to setup the default password strategy!"
                 $FlagRes = "Warning"
             }
@@ -609,7 +610,7 @@ Function Resolve-ALAPSNotInstalled {
         https://learn.microsoft.com/fr-fr/windows-server/identity/laps/laps-scenarios-windows-server-active-directory
 
         .NOTES
-        Version 01.00.00 (2024/06/12 - Creation)
+        Version 01.02.00 (2026/10/29 - Account for Windows 2025)
     #>
     Param()
 
@@ -625,8 +626,11 @@ Function Resolve-ALAPSNotInstalled {
 
     $LogData += @("OS Caption: $($OSCaption)","Domain Functional Level: $($DomainDFL)","OS Architecture: $($OSArchitr)",' ')
 
+    $Win2k19OrNewer = [int]((gwmi Win32_OperatingSystem).Caption) -ge 2019
+    $DFL2k16OrNewer = [int]($DomainDFL) -ge 2016
+
     # Updating Schema, if possible
-    if (($OSCaption -match '2019' -or $OSCaption -match '2022') -and ($DomainDFL -match '2016')) {
+    if ($Win2k19OrNewer -and $DFL2k16OrNewer) {
         $LogData += @("The prerequesite to Windows LAPS are fullfilled."," ")
         Try {
             [void](Update-LapsADSchema -Confirm:$false -ErrorAction Stop)
@@ -638,7 +642,7 @@ Function Resolve-ALAPSNotInstalled {
         }
     }
     Else {
-        $LogData += @("The prerequesite to Windows LAPS are not fullfilled (OS not 2019+ and/or DFL not 2016)"," ")
+        $LogData += @("The prerequesite to Windows LAPS are not fullfilled (OS not 2019+ and/or DFL not 2016+)"," ")
         Try {
             if ($OSArchitr -match '64') {
                 [void](Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -WorkingDirectory ".\IMPORTS\MS LAPS" -ArgumentList '/i laps.x64.msi ADDLOCAL=Management.UI,Management.PS,Management.ADMX /quiet /norestart' -NoNewWindow -Wait -ErrorAction Stop)

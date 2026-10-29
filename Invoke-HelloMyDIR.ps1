@@ -34,11 +34,12 @@
     Will run the script and update the file RunSetup.xml, if exists (else, does nothing).
 
     .NOTES
-    Version.: 01.01.000
-    Author..: Loic VEIRMAN (MSSec)
+    Version.: 01.02.000
+    Author..: Rémy B., Loic VEIRMAN (MSSec)
     History.: 
     01.00.000   Script creation.
     01.01.000   Hello my DC - Add a DC to your forest.
+    01.02.000   (Version name pending) - Account for Windows 2025
 
     Exit Code:
     1...: Prerequesite are not compliant.
@@ -79,7 +80,7 @@ Param
 # > xmlRunSetup.........: xml data from RunSetup.xml. Null on loading, filled-up with the function Get-XmlContent.
 
 $ScriptPrerequesite = $True
-$ScriptEdition = '1.1.2 Quick fix 002'
+$ScriptEdition = '1.2.0'
 $arrayScriptLog = @("Running Hello My DIR! Edition $ScriptEdition.")
 $xmlDomainSettings = $null
 $xmlScriptSettings = $null
@@ -177,7 +178,7 @@ else {
 Clear-Host
 $ScriptTitle = @(' ', "$([Char]0x2554)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2557)" `
         , "$([Char]0x2551) Hello My DIR!               $([Char]0x2551)" `
-        , "$([Char]0x2551) version 1.1.2 Quick Fix 002 $([Char]0x2551)" `
+        , "$([Char]0x2551) version 1.2.0               $([Char]0x2551)" `
         , "$([Char]0x2551) Lic. GNU GPL3               $([Char]0x2551)" `
         , "$([Char]0x255A)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x2550)$([Char]0x255D)" `
         , ' ')
