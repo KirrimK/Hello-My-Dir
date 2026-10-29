@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Settings Edition='1.1.2 Quick Fix 002'> 
+<Settings Edition='1.2.0'> 
     <Logging Name="HelloMyDir" Prefix="HmD_" />
     <Message>
         <Text ID='000' Line1="Welcome!" Line2="This script will assist you in creating a new domain fully secured." Line3="" Line4="" />
@@ -41,11 +41,11 @@
         <Wordlist>Uh!;Bad;Feeling;Plan;Grrr;Coach;Play;Give;Chance;Handle:The;Rock;Dog;Crap;Hate;Spider;Down;42;Handball;Squash;Pumpkin;Bat;Skull;Black;Adams;Family</Wordlist>
     </Lurch>
     <FunctionalLevel>
-        <OS Caption="2025" Regex="^[(4-7)0]$" />
+        <OS Caption="2025" Regex="^(7|10)$" />
         <OS Caption="2022" Regex="^[3-7]$" />
         <OS Caption="2019" Regex="^[3-7]$" />
         <OS Caption="2016" Regex="^[2-7]$" />
-        <OS Caption="2012" Regex="^[2-7]$" />
+        <OS Caption="2012" Regex="^[2-6]$" />
         <Definition Id="1" Desc="Windows 2003" />
         <Definition Id="2" Desc="Windows 2003 R2" />
         <Definition Id="3" Desc="Windows 2008" />

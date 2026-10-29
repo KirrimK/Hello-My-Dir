@@ -12,7 +12,7 @@
 RootModule = 'Module-HmD.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '1.2.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -21,10 +21,10 @@ ModuleVersion = '1.0.0.0'
 GUID = 'd1eb03e2-417d-4b3d-8911-4194d7037dbf'
 
 # Author of this module
-Author = 'Loic VEIRMAN (MSSec)'
+Author = 'Rémy B., Loic VEIRMAN (MSSec)'
 
 # Company or vendor of this module
-CompanyName = 'MSSec'
+CompanyName = ''
 
 # Copyright statement for this module
 Copyright = '(c) Loic VEIRMAN (MSSec). All rights reserved.'
@@ -107,7 +107,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Module Creation'
+        ReleaseNotes = 'Account for Windows 2025'
 
         # Prerelease string of this module
         # Prerelease = ''
