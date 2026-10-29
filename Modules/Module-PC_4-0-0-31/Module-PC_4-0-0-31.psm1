@@ -5,6 +5,11 @@
     > A-DsHeuristicsLDAPSecurity        Function Resolve-ADsHeuristicsLDAPSecurity
     > A-DnsZoneAUCreateChild            Function Resolve-ADnsZoneAUCreateChild
     > A-RootDseAnonBinding              Function Resolve-ARootDseAnonBinding
+    > S-FirewallScript                  Default Domain Security
+    > S-KDCArmoring                     Default Domain Controllers Security
+    > S-KerberosArmoring                Default Domain Security
+    > S-TerminalServicesGPO             Default Domain Security
+    > S-DefenderASR                     Default Domain Security
     
 #>
 #region A-DsHeuristicsLDAPSecurity
