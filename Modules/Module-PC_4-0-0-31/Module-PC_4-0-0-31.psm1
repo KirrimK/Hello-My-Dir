@@ -10,6 +10,8 @@
     > S-KerberosArmoring                Default Domain Security
     > S-TerminalServicesGPO             Default Domain Security
     > S-DefenderASR                     Default Domain Security
+    > A-DCLdapsProtocolAdvanced         Default Domain Controllers Security
+    > S-FolderOptions                   Default Domain Security
     
 #>
 #region A-DsHeuristicsLDAPSecurity

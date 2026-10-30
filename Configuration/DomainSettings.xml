@@ -20,8 +20,8 @@
     </PwdStrategyObjects>
     <DefaultPwdStrategy PwdLength='10' />
     <GroupPolicies>
-        <GPO Name="Default Domain Security" BackupID="{85317CA1-B0FE-4234-9401-CE9DD0B26CA8}" Linkage="Root" />
-        <GPO Name="Default Domain Controllers Security" BackupID="{8B7AC834-BA06-4B12-A8F0-C99FBD15F0A3}" Linkage="DC" />
+        <GPO Name="Default Domain Security" BackupID="{7451C58F-020B-4571-A64A-94A60986CA0C}" Linkage="Root" />
+        <GPO Name="Default Domain Controllers Security" BackupID="{BF914682-44DC-45AD-981F-EDC880B80643}" Linkage="DC" />
     </GroupPolicies>
     <Delegations>
         <Delegation Name='Deploy-DomainJoinDelegation' />
