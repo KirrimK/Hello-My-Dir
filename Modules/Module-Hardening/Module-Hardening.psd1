@@ -12,7 +12,7 @@
 RootModule = 'Module-Hardening.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '1.2.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -21,10 +21,10 @@ ModuleVersion = '1.0.0.0'
 GUID = 'c2f2c291-eb6c-4582-90c4-a8bf108aab20'
 
 # Author of this module
-Author = 'loicveirman'
+Author = 'Rémy B., Loic VEIRMAN'
 
 # Company or vendor of this module
-CompanyName = 'MSSEC'
+CompanyName = ''
 
 # Copyright statement for this module
 Copyright = '(c) loicveirman. All rights reserved.'
