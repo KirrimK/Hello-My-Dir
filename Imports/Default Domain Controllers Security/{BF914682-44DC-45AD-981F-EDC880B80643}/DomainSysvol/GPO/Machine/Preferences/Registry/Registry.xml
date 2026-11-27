@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RegistrySettings clsid="{A3CCFC41-DFDB-43a5-8D26-0FE8B954DA51}"><Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="HKEY_LOCAL_MACHINE">
+		<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="SYSTEM">
+			<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="CurrentControlSet">
+				<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Control">
+					<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="SecurityProviders">
+						<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="SCHANNEL">
+							<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Protocols">
+								<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="SSL 2.0">
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Client">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Server">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+								</Collection>
+								<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="SSL 3.0">
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Client">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Server">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+								</Collection>
+								<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="TLS 1.0">
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Client">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Server">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+								</Collection>
+								<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="TLS 1.1">
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Client">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Server">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+								</Collection>
+								<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="TLS 1.2">
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Client">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+									</Collection>
+									<Collection clsid="{53B533F5-224C-47e3-B01B-CA3B3F3FF4BF}" name="Server">
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="Enabled" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]" name="Enabled" default="0" type="REG_DWORD" displayDecimal="0" value="00000001"/>
+										</Registry>
+										<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisabledByDefault" descr="Imported Reg File" image="17">
+											<Properties action="U" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]" name="DisabledByDefault" default="0" type="REG_DWORD" displayDecimal="0" value="00000000"/>
+										</Registry>
+									</Collection>
+								</Collection>
+							</Collection>
+						</Collection>
+					</Collection>
+				</Collection>
+			</Collection>
+		</Collection>
+	</Collection>
+</RegistrySettings>
