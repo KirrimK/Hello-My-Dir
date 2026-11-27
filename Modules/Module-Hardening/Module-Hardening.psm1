@@ -13,7 +13,7 @@ Function Deploy-DomainJoinDelegation {
         A group will also be created to manage delegation rights (and not assign this to a user object).
 
         .NOTES
-        Version 01.00.00 (2024/06/20 - Creation)
+        Version 01.02.00 (2026/11/27 - Create DLGUSER01 with AES-128 & AES-256)
     #>
     Param()
     
@@ -63,7 +63,7 @@ Function Deploy-DomainJoinDelegation {
                               -Name $UserName -DisplayName $UserName `
                               -SamAccountName $UserName -accountNotDelegated 1 `
                               -AccountPassword  (ConvertTo-SecureString -AsPlainText $randomSMpwd -Force) `
-                              -Enabled 1 -GivenName "Delegate" -Surname "USER 01" -KerberosEncryptionType AES128 `
+                              -Enabled 1 -GivenName "Delegate" -Surname "USER 01" -KerberosEncryptionType AES128,AES256 `
                               -TrustedForDelegation 0 -UserPrincipalName "$Username@$((Get-AdDomain).DnsRoot)")
             $DbgLog += @(' ',"User '$Username' successfully created.")
 
