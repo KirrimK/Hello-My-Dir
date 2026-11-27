@@ -12,6 +12,7 @@
     > S-DefenderASR                     Default Domain Security
     > A-DCLdapsProtocolAdvanced         Default Domain Controllers Security
     > S-FolderOptions                   Default Domain Security
+    > S-AesNotEnabled                   Function Resolve-SAesNotEnabled
     
 #>
 #region A-DsHeuristicsLDAPSecurity
@@ -172,6 +173,37 @@ Function Resolve-ARootDseAnonBinding {
 
     # Add the setting to the msDS-Other-Settings attribute
     Set-ADObject -Identity $ObjectPath -Add @{ "msDS-Other-Settings" = "DenyUnauthenticatedBind=1" }
+
+    $LogData += '> Successfull <'
+    $FlagRes = 'Info'
+
+    # Sending log and leaving with proper exit code
+    Write-ToEventLog $FlagRes $LogData
+    Return $FlagRes
+}
+#endregion
+
+#region S-AesNotEnabled
+Function Resolve-SAesNotEnabled {
+    <#
+        .SYNOPSIS
+        Resolve the alert S-AesNotEnabled from PingCastle.
+
+        .DESCRIPTION
+        The purpose is to ensure that all accounts without explicit Kerberos settings
+        support AES-128 & AES-256
+
+        .NOTES
+        Version 01.02.00 (2026/11/27 - Creation)
+    #>
+
+    Param()
+
+    # Prepare for eventlog
+    Test-EventLog | Out-Null
+    $LogData = @('Fixing msDS-SupportedEncryptionTypes value for all accounts')
+
+    Get-ADObject -LDAPFilter "(&(!(msDS-SupportedEncryptionTypes=*))(|(objectClass=user)(objectClass=computer)(objectClass=msDS-GroupManagedServiceAccount)))" | Set-ADObject -Replace @{"msDS-SupportedEncryptionTypes" = 24}
 
     $LogData += '> Successfull <'
     $FlagRes = 'Info'
