@@ -694,7 +694,7 @@ Switch ($ScriptMode) {
                 # PingCastle Script Fixes
                 $PCFixList = @('S-ADRegistration', 'S-DC-SubnetMissing', 'S-DC-SubnetMissing-IPv6', 'S-PwdNeverExpires', 'P-RecycleBin', 'P-Delegated')
                 $PCFixList += @('P-UnprotectedOU', 'A-MinPwdLen', 'A-PreWin2000AuthenticatedUsers', 'A-LAPS-NOT-Installed', 'P-SchemaAdmin')
-                $PCFixList += @('A-DsHeuristicsLDAPSecurity', 'A-DnsZoneAUCreateChild', 'A-RootDseAnonBinding')
+                $PCFixList += @('A-DsHeuristicsLDAPSecurity', 'A-DnsZoneAUCreateChild', 'A-RootDseAnonBinding', 'S-AesNotEnabled')
                 foreach ($Resolution in $PCFixList) {
                     $CursorPosition = Write-Progression -Step Create -Message "Fixing PingCastle alert...: $Resolution"
                     Write-Progression -Step Update -code Running -CursorPosition $CursorPosition
